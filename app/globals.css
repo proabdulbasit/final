@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 240 3.7% 15.9%;
+
+    --radius: 7px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-300;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply rounded bg-gradient-to-t from-colorfull-purple to-colorfull-blue;
+  }
+
+  .text-gradient-1 {
+    @apply text-transparent bg-clip-text bg-gradient-to-tl from-colorfull-green via-colorfull-purple to-colorfull-green;
+  }
+
+  .text-gradient-2 {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-colorfull-blue via-colorfull-purple to-colorfull-yellow;
+  }
+
+  .btn-gradient-1 {
+    @apply bg-gradient-to-tr from-colorfull-blue via-colorfull-red to-colorfull-green hover:bg-gradient-to-tl hover:via-colorfull-purple hover:to-colorfull-blue;
+  }
+
+  .btn-gradient-2 {
+    @apply bg-gradient-to-l from-colorfull-blue to-colorfull-red hover:bg-gradient-to-tl hover:to-colorfull-red;
+  }
+
+  .btn-gradient-3 {
+    @apply bg-gradient-to-tl from-colorfull-blue-dark via-colorfull-blue to-colorfull-purple hover:from-colorfull-purple hover:to-colorfull-red-dark;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .nav-item::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    @apply w-0 h-[3px] rounded bg-colorfull-red hover:w-full transition-all duration-200 ease-in;
+  }
+
+  .navbar-active {
+    @apply bg-black backdrop-blur-sm;
+  }
+}
